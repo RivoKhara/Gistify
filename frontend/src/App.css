@@ -1,0 +1,192 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+}
+
+/* Dark mode */
+.app-container.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.content-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 70%;
+  max-width: 900px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode content box */
+.app-container.dark .content-box {
+  background: #2c2c2c;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* Dark mode title */
+.app-container.dark .title {
+  color: #ffffff;
+}
+
+.input-box {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.app-container.dark .input-box {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.input-box:focus {
+  outline: none;
+  box-shadow: 0 0 15px #0077ff;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.submit-btn, .clear-btn, .toggle-btn {
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: #0077ff;
+  color: #ffffff;
+}
+
+.submit-btn:hover {
+  background: #005bb5;
+  transform: scale(1.05);
+}
+
+.clear-btn {
+  background: #e0e0e0;
+  color: #000;
+}
+
+.clear-btn:hover {
+  background: #c0c0c0;
+}
+
+.app-container.dark .clear-btn {
+  background: #555;
+  color: #fff;
+}
+
+.app-container.dark .clear-btn:hover {
+  background: #777;
+}
+
+/* Fixed toggle button top-left */
+.fixed-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: #555;
+  color: #fff;
+}
+
+.fixed-toggle:hover {
+  background: #333;
+}
+
+.app-container.dark .fixed-toggle {
+  background: #999;
+  color: #000;
+}
+
+.summary-box {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 15px;
+  animation: fadeInUp 0.5s ease;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app-container.dark .summary-box {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+.summary-box h2 {
+  margin-top: 0;
+  color: #0077ff;
+}
+
+.app-container.dark .summary-box h2 {
+  color: #00d1ff;
+}
+
+.summary-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .input-box {
+    height: 120px;
+  }
+
+  .submit-btn, .clear-btn, .toggle-btn {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
